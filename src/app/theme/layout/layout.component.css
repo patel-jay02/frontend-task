@@ -1,0 +1,21 @@
+.collapse {
+    z-index: 999 !important;
+}
+
+.collapse-inner {
+    background-color: #510078 !important;
+    color: white !important;
+    border-radius: 0.25rem !important;
+}
+
+.collapse-header {
+    color: white !important;
+}
+
+.collapse-item {
+    color: white !important;
+}
+
+.sidebar .nav-item .collapse, .sidebar .nav-item .collapsing {
+    margin: 0 0.5rem !important;
+}

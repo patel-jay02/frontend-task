@@ -1,0 +1,98 @@
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800"> Sign up form</h1>
+</div>
+
+<div class="outlet-content">
+
+    <form class="user" [formGroup]="myForm">
+        <!-- Content Row -->
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label> Name</label>
+                    <input type="text" formControlName="name" id="name" 
+                        name="name" class="form-control">
+                    <div class="error input-error" style="width: auto;padding: 5px;"
+                    *ngIf="controls['name'].invalid && (submitted || (controls['name'].dirty || controls['name'].touched))">
+                        <div *ngIf="controls['name'].errors?.['required']">
+                            Name is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label> User Name</label>
+                    <input type="text" formControlName="username" id="username" 
+                        name="username" class="form-control">
+                    <div class="error input-error" style="width: auto;padding: 5px;"
+                    *ngIf="controls['username'].invalid && (submitted || (controls['username'].dirty || controls['username'].touched))">
+                        <div *ngIf="controls['username'].errors?.['required']">
+                            username is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label> Email</label>
+                    <input type="email" formControlName="email" id="email" 
+                        name="email" class="form-control" [pattern]="emailPattern">
+                    <div class="error input-error" style="width: auto;padding: 5px;"
+                    *ngIf="controls['email'].invalid && (submitted || (controls['email'].dirty || controls['email'].touched))">
+                        <div *ngIf="controls['email'].errors?.['required']">
+                            Email is required.
+                        </div>
+                        <div *ngIf="controls['email'].errors?.['pattern']"> 
+                            Email no not valid. ex. abc123@gmail.com
+                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label> Password</label>
+                    <input type="password" formControlName="password" id="password" 
+                        name="password" class="form-control">
+                    <div class="error input-error" style="width: auto;padding: 5px;"
+                    *ngIf="controls['password'].invalid && (submitted || (controls['password'].dirty || controls['password'].touched))">
+                        <div *ngIf="controls['password'].errors?.['required']">
+                            password is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label> Mobile No</label>
+                    <input type="number" formControlName="mobile" id="mobile" 
+                        name="mobile" class="form-control" [pattern]="mobilePattern">
+                    <div class="error input-error" style="width: auto;padding: 5px;"
+                    *ngIf="controls['mobile'].invalid && (submitted || (controls['mobile'].dirty || controls['mobile'].touched))">
+                        <div *ngIf="controls['mobile'].errors?.['required']">
+                            Mobile no is required.
+                        </div>
+                        <div *ngIf="controls['mobile'].errors?.['pattern']"> 
+                            Mobile no not valid. ex.9895969794
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center m-t-50">
+            <div class="col-2">
+                <button (click)="submitForm()" class="btn btn-primary btn-user btn-block">
+                    Save
+                </button>
+            </div>
+            <div class="col-2">
+                <button (click)="back()" class="btn btn-danger btn-user btn-block">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </form>
+
+</div>
